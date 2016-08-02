@@ -1,0 +1,11 @@
+// CSS 的入口
+
+@import './_normalize';
+
+$mainColor: #4679C6;
+$errorColor: #F7615E;
+$borderColor: #CAD1E0;
+
+@import './layout';
+@import './home';
+@import './order';
