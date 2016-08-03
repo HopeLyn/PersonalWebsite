@@ -16,7 +16,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <h1>欢迎来到企业订餐管理平台</h1>
       </div>
     );
   }

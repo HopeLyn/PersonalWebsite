@@ -8,7 +8,7 @@
     "url": "git@github.com:HopeLyn/PersonalWebsite.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --color --port 8998 --content-base dev",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --color --port 8869 --content-base dev",
     "prod": "webpack -p --config webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

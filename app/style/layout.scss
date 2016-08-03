@@ -1,12 +1,5 @@
 // 布局相关的样式
 
-$sideWidth: 160px;
-$headerHeight: 64px;
-
-$lightSideColor: #fff;
-$darkSideColor: #313D4A;
-$sideColor: $lightSideColor;
-
 body {
   background: #ddd;
   color: #333;
@@ -38,198 +31,144 @@ a:visited {
   text-decoration: none;
 }
 
-header {
-  height: $headerHeight;
-  line-height: $headerHeight;
-  background: $mainColor;
-  color: #fff;
-  text-align: left;
-  padding: 0 20px;
 
-  h1 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: normal;
-    display: inline-block;
-  }
-
-  .login-info {
-    float: right;
-  }
-
-  .logout {
-    margin-left: 20px;
-    color: #fff;
-
-    svg {
-      vertical-align: middle;
-      margin-left: 6px;
-      position: relative;
-      top: -1px;
-    }
-  }
+.ant-layout-aside {
+  //position: relative;
+  min-height: 100%;
 }
 
-aside.side {
-  width: $sideWidth;
+.ant-layout-aside .ant-layout-logo {
+  width: 150px;
+  height: 150px;
+  background: url(https://avatars3.githubusercontent.com/u/8351105?v=3&s=460) no-repeat;
+  border-radius: 6px;
+  margin: 16px 24px 16px 28px;
+  transition: all 0.3s ease;
+  background-size: contain;
+}
+
+.ant-layout-aside-collapse .ant-layout-logo {
+  width: 32px;
+  height: 32px;
+  margin: 16px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-sider {
+  width: 224px;
+  background: #404040;
   position: absolute;
-  left: 0;
-  top: $headerHeight;
-  bottom: 0;
-  background-color: $lightSideColor;
-  color: #657B90;
-  z-index: 10;
-
-  .ant-menu-inline, .ant-menu-vertical {
-    border: none;
-  }
-
-  .ant-menu-dark {
-    background-color: $darkSideColor;
-
-    .ant-menu-sub {
-      background-color: $darkSideColor;
-    }
-  }
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
-main {
-  margin-left: $sideWidth;
-  position: absolute;
-  left: 0;
-  top: $headerHeight;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  z-index: 1;
+.ant-layout-aside-collapse .ant-layout-sider {
+  width: 64px;
+  transition: all 0.3s ease;
 }
 
-.wrap {
-  padding: 20px;
+.ant-layout-aside .ant-layout-sider > .ant-menu {
+  margin-bottom: 20px;
 }
 
-.content {
-  padding: 20px;
-  min-width: 800px;
-  background-color: #fff;
-
-  .content-head {
-    padding-bottom: 10px;
-  }
-
-  .content-body {
-    padding-top: 10px;
-
-    $filterHeight: 30px;
-    $inputWidth: 200px;
-
-    .filter {
-      padding: 10px 0px 15px;
-      line-height: $filterHeight;
-
-      .ant-form-item-control {
-        margin-bottom: 10px;
-
-        input {
-          height: $filterHeight;
-          width: $inputWidth;
-          border-radius: 4px;
-          font-size: 14px;
-        }
-      }
-
-      .ant-select {
-        width: $inputWidth;
-      }
-
-      .ant-select-selection,
-      .ant-select-lg .ant-select-selection--single .ant-select-selection__rendered {
-        height: $filterHeight;
-        line-height: $filterHeight;
-        font-size: 14px;
-      }
-
-      button {
-        height: $filterHeight;
-        float: right;
-      }
-
-      label {
-        font-size: 14px;
-        margin: 0 10px;
-      }
-
-      .divider {
-        margin: 0 10px;
-      }
-
-      //button,
-      //button:hover {
-      //  background: #208CF9;
-      //  color: #fff;
-      //  width: 60px;
-      //  height: $filterHeight;
-      //  font-size: 14px;
-      //  padding: 0;
-      //}
-      //
-      //button[disabled],
-      //button[disabled]:hover {
-      //  color: #fff;
-      //  background: rgba(32, 140, 249, 1);
-      //  opacity: 0.54;
-      //  border-color: #0C6EBE;
-      //}
-    }
-
-  }
-
-  .ant-table-body {
-    th, td {
-      text-align: center;
-    }
-
-    a {
-      color: #438DE0;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  // 待用
-  .ant-spin-nested-loading {
-    position: static;
-  }
-
-  .ant-spin-nested-loading .ant-spin {
-    margin-left: 0;
-  }
-
-  .ant-breadcrumb {
-    margin-bottom: 15px;
-  }
-
-  .ant-breadcrumb > span {
-    color: #438DE0;
-  }
-
-  .ant-breadcrumb > span:last-child {
-    color: #333;
-    font-weight: 400;
-  }
-
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item {
+  margin: 16px 0;
 }
 
-.mr10 {
-  margin-right: 10px;
-}
-
-.ml10 {
-  margin-left: 10px;
-}
-
-.inline {
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item .nav-text {
+  vertical-align: baseline;
   display: inline-block;
+}
+
+.ant-layout-aside .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon {
+  transition: font-size .3s;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item, .ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-submenu {
+  transition: all 0s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item > .anticon, .ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-submenu .anticon {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item .nav-text, .ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-submenu .nav-text {
+  display: none;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover, .ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-submenu:hover {
+  background: #2db7f5;
+  color: #fff;
+  transition: all 0s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-item:hover .nav-text, .ant-layout-aside-collapse .ant-layout-sider > .ant-menu > .ant-menu-submenu:hover .nav-text {
+  display: inline-block;
+  vertical-align: top;
+  background: #2db7f5;
+  color: #fff;
+  padding-right: 16px;
+  border-radius: 0 5px 5px 0;
+}
+
+/* 实际使用中需要改成 position: fixed */
+.ant-layout-aside .ant-aside-action {
+  height: 42px;
+  width: 224px;
+  position: absolute;
+  bottom: 0;
+  background: #656565;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-aside-action {
+  width: 64px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-header {
+  background: #fff;
+  height: 64px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.ant-layout-aside .ant-layout-breadcrumb {
+  margin: 7px 0 -17px 24px;
+}
+
+.ant-layout-aside .ant-layout-main {
+  margin-left: 224px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside-collapse .ant-layout-main {
+  margin-left: 64px;
+  transition: all 0.3s ease;
+}
+
+.ant-layout-aside .ant-layout-container {
+  margin: 24px 16px;
+}
+
+.ant-layout-aside .ant-layout-content {
+  background: #fff;
+  padding: 24px;
+}
+
+.ant-layout-aside .ant-layout-footer {
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  background: #fff;
+  border-top: 1px solid #e9e9e9;
+  width: 100%;
 }
