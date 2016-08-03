@@ -23,6 +23,10 @@ import * as reducers from './pages/reducers';
 import App from './pages/containers/App';
 import Home from './pages/containers/Home';
 
+// 特效部分
+import EffectList from './pages/containers/effect/EffectList';
+import Effect1 from './pages/containers/effect/category/effect1/multiBackground';
+
 const reducer = combineReducers({
   ...reducers,
   routing: routerReducer,
@@ -56,6 +60,11 @@ ReactDOM.render(
       <Router history={ history }>
         <Route path="/" component={ App }>
           <IndexRoute component={ Home } />
+
+          <Route path="effect">
+            <IndexRoute component={ EffectList } />
+            <Route path="1" component={ Effect1 }></Route>
+          </Route>
         </Route>
       </Router>
 

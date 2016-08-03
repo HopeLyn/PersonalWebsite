@@ -6,8 +6,7 @@
 import React, { PropTypes } from 'react';
 import { ElemeDomAnimator } from 'eleme-dom-animator';
 import { connect } from 'react-redux';
-import { Menu, Icon } from 'antd';
-const SubMenu = Menu.SubMenu;
+import { Menu, Icon, Breadcrumb } from 'antd';
 
 // css 引入
 import 'antd/dist/antd.css';
@@ -26,12 +25,6 @@ class App extends React.Component {
     this.setState({
       collapse: !this.state.collapse
     })
-  }
-
-  onSubMenuClick() {
-    if (this.state.collapse) {
-      this.onCollapseChange();
-    }
   }
 
   render() {
@@ -65,9 +58,23 @@ class App extends React.Component {
           </div>
         </aside>
 
-        <main>
-          { this.props.children }
-        </main>
+        <div className="ant-layout-main">
+          <div className="ant-layout-header"></div>
+          <div className="ant-layout-breadcrumb">
+            <Breadcrumb>
+              <Breadcrumb.Item>首页</Breadcrumb.Item>
+              <Breadcrumb.Item>应用列表</Breadcrumb.Item>
+              <Breadcrumb.Item>某应用</Breadcrumb.Item>
+            </Breadcrumb>
+          </div>
+          <div className="ant-layout-container">
+            <div className="ant-layout-content">
+              <div>
+                { this.props.children }
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

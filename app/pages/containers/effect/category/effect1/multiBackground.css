@@ -1,0 +1,17 @@
+.animate-area	{
+    width: auto;
+    height: 300px;
+
+    background-image: url(./images/twitter-logo-bird.png), url(./images/treehouseFrog.png), url(./images/bg-clouds.png);
+    background-position: 20px -90px, 30px 80px, 0px 0px;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+}
+
+@keyframes animatedBird {
+    from { background-position: 20px 20px, 30px 80px, 0 0; }
+    to { background-position: 300px -90px, 30px 20px, 100% 0; }
+}
+
+.animate-area	{
+    animation: animatedBird 4s linear infinite;
+}
